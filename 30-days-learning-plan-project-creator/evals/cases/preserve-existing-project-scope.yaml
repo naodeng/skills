@@ -1,0 +1,31 @@
+id: preserve-existing-project-scope
+title: 重构已有项目时保留无关修改并校验源文件边界
+description: |
+  验证 Skill 能识别已有学习计划项目的 canonical source、生成物和无关工作区改动，避免扩大范围或手工修改生成 HTML。
+
+input:
+  prompt: |
+    请审查当前已有的 30 天学习计划项目，并把它整理为可维护的 Markdown-first 结构。
+    重点检查：每日课件是否恰好 30 个、总计划是否链接 canonical daily directory、
+    构建器是否生成 31 个 HTML 页面、README 和 DEPLOYMENT 文档是否使用真实路径。
+    工作区可能有用户未提交的无关修改，请先查看 Git 状态并保留它们。
+    不要手工编辑 _site/，也不要删除或重置任何无关文件。报告你实际检查到的证据和剩余风险。
+
+expect:
+  must_contain:
+    - "Git"
+    - "30"
+    - "31"
+    - "_site/"
+    - "canonical"
+  must_not_contain:
+    - "git reset --hard"
+    - "删除无关"
+
+judge:
+  type: rule_based
+  success:
+    - output_contains:
+        all: ["Git", "30", "31", "_site/", "canonical"]
+    - output_not_contains:
+        any: ["git reset --hard", "删除无关"]

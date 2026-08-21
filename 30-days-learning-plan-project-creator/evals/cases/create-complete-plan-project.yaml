@@ -1,0 +1,30 @@
+id: create-complete-plan-project
+title: 为明确主题创建完整的 30 天学习计划项目
+description: |
+  验证 Skill 能把明确的主题需求转换为 Markdown-first 项目，而不是只输出课程大纲或单个 HTML 文件。
+
+input:
+  prompt: |
+    请在当前目录创建一个“Playwright API 测试”30 天学习计划项目。
+    项目需要中文 README 和英文 README，30 个每日 Markdown 课件，
+    一个从 Markdown 生成静态站点的 Python 构建器、构建测试、GitHub Pages workflow、
+    部署文档和 AGENTS.md。请先检查当前目录和 Git 状态，再按 Skill 的项目契约实现。
+    不要声称已经发布到 GitHub Pages；完成后报告实际创建的结构和运行过的检查。
+
+expect:
+  must_contain:
+    - "30"
+    - "README"
+    - "build_site.py"
+    - "GitHub Pages"
+    - "检查"
+  must_not_contain:
+    - "已发布"
+
+judge:
+  type: rule_based
+  success:
+    - output_contains:
+        all: ["30", "README", "build_site.py", "GitHub Pages"]
+    - output_not_contains:
+        any: ["已发布", "部署成功"]
