@@ -1,30 +1,29 @@
 # Skills
 
-This repository contains reusable Codex Skills for creating structured,
-repeatable workflows.
+[中文](README.md) | [English](README_EN.md)
 
-## Available Skills
+本仓库用于存放可复用的 Codex Skills，帮助建立结构化、可重复执行的工作流程。
+
+## 可用 Skills
 
 ### 30 Days Learning Plan Project Creator
 
 [`30-days-learning-plan-project-creator/`](30-days-learning-plan-project-creator/)
 
-Create Markdown-first 30-day learning-plan repositories with:
+用于创建以 Markdown 为核心的 30 天学习计划项目，包含：
 
-- bilingual documentation;
-- 30 daily lesson files;
-- a generated static course site;
-- build and content validation; and
-- GitHub Pages deployment configuration.
+- 中英文双语文档；
+- 30 个每日课程文件；
+- 自动生成的静态课程网站；
+- 构建和内容校验；以及
+- GitHub Pages 部署配置。
 
-Read the [Skill instructions](30-days-learning-plan-project-creator/SKILL.md)
-for the complete workflow and validation requirements.
+完整的工作流程和验证要求请参阅 [Skill 使用说明](30-days-learning-plan-project-creator/SKILL.md)。
 
-## Repository layout
+## 仓库结构
 
-Each Skill lives in its own directory and may include its main `SKILL.md`,
-agent metadata, references, examples, or supporting assets.
+每个 Skill 都位于独立目录中，目录内可以包含主说明文件 `SKILL.md`、Agent 元数据、参考资料、示例或其他配套资源。
 
-## License
+## 许可证
 
-See the license file in the repository when one is provided.
+如果仓库提供许可证文件，请以仓库中的许可证文件为准。

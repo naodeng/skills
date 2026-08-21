@@ -2,6 +2,8 @@
 
 本仓库用于存放可复用的 Codex Skills，帮助建立结构化、可重复执行的工作流程。
 
+[中文](README.md) | [English](README_EN.md)
+
 ## 可用 Skills
 
 ### 30 Days Learning Plan Project Creator
