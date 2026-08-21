@@ -1,11 +1,11 @@
 ---
 name: 30-days-learning-plan-project-creator
-description: Create Markdown-first 30-day learning plan repositories with bilingual docs, daily lessons, static sites, and GitHub Pages deployment.
+description: Use when creating or restructuring a topic-specific 30-day learning-plan repository with Markdown lessons, bilingual documentation, a generated static site, tests, or GitHub Pages deployment.
 ---
 
 # 30 Days Learning Plan Project Creator
 
-Create or restructure a complete 30-day learning-plan repository for a user-specified topic. Use this skill when the user asks for a course project, learning-plan repository, bilingual README, static course website, or GitHub Pages workflow modeled on the reference project pattern.
+Create or restructure a complete 30-day learning-plan repository for a user-specified topic. Load this skill when the request involves a course project, learning-plan repository, bilingual README, static course website, or GitHub Pages workflow.
 
 ## Required outcome
 
@@ -15,7 +15,7 @@ Produce a repository that is Markdown-first and reproducible:
 - `topic-qa-30-day-plan/day-*.md` with exactly 30 daily source files
 - `scripts/build_site.py` that generates `_site/` from the Markdown sources
 - `site/assets/` for shared CSS and browser-side behavior
-- `site/assets/site-icon.svg`, `favicon-32.png`, and `apple-touch-icon.png` when the reference site uses branded assets
+- `site/assets/site-icon.svg`, `favicon-32.png`, and `apple-touch-icon.png` when the project uses branded icon assets
 - `tests/test_build_site.py` for observable build invariants
 - `.github/workflows/pages.yml` for GitHub Pages deployment
 - `README.md` and `README_EN.md`
@@ -26,7 +26,7 @@ The exact topic prefix and lesson slugs should be natural for the project. Keep 
 
 When a reference project is supplied, match its rendered-site contract as well as its repository contract. Port the shared page template, external stylesheet, frontend script, favicon/brand assets, header links, footer, print behavior, search/filter interactions, and lesson navigation. Replace the reference product's content and labels with the requested topic; do not substitute a separate visual system unless the user asks for a redesign.
 
-Never leave transitional duplicates in the finished repository: do not keep root-level `day-*.md`, a second total-plan file, or `playwright-*` names in a DeepSeek project. If a reference project is used, copy its responsibilities and document shape, not its product name.
+Never leave transitional duplicates in the finished repository: do not keep root-level `day-*.md`, a second total-plan file, or names copied from an unrelated reference project. If a reference project is used, copy its responsibilities and document shape, not its product name.
 
 ## Workflow
 
@@ -68,8 +68,8 @@ Verify all of the following:
 - `_site/` contains 31 HTML files: home plus 30 lessons;
 - every homepage lesson link resolves to a generated page;
 - every lesson has a working home link and correct next/finish navigation;
-- generated HTML links the expected external CSS and JS assets and includes the expected icon assets;
-- homepage search/filter controls and lesson navigation are present when they exist in the reference site;
+- generated HTML links the expected external CSS and JS assets and includes icon assets when the project uses them;
+- homepage search/filter controls and lesson navigation are present when they are part of the selected site contract;
 - no generated list-marker leaks or unescaped obvious Markdown syntax remain;
 - README and deployment docs name the actual source paths and commands;
 - `git status --short` shows only task-owned changes;
