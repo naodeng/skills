@@ -1,0 +1,4 @@
+interface:
+  display_name: "30-Day Learning Plan Project Creator"
+  short_description: "Create 30-day plan repos with Pages"
+  default_prompt: "Create a complete 30-day learning plan project for [topic] using this skill."
