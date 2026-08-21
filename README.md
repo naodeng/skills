@@ -1,6 +1,6 @@
 # Skills
 
-[中文](README.md) | [English](README_EN.md)
+[中文（当前页）](README.md) | [English](README_EN.md)
 
 本仓库用于存放可复用的 Codex Skills，帮助建立结构化、可重复执行的工作流程。
 
