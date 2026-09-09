@@ -1,0 +1,4 @@
+interface:
+  display_name: "Version DoD Evidence"
+  short_description: "Audit version acceptance evidence and gaps"
+  default_prompt: "Audit this version against its acceptance criteria and evidence."

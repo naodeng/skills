@@ -20,6 +20,30 @@
 
 完整的工作流程和验证要求请参阅 [Skill 使用说明](30-days-learning-plan-project-creator/SKILL.md)。
 
+### Dual Repository Release
+
+[`dual-repository-release/`](dual-repository-release/)
+
+用于在项目仓/Fork 与上游仓之间核查或交付同一版本，分别验证目标分支、annotated tag、GitHub Release 与 CI 证据；不会将只读核查扩展为发布授权。
+
+完整流程请参阅 [Skill 使用说明](dual-repository-release/SKILL.md)。
+
+### Version DoD Evidence
+
+[`version-dod-evidence/`](version-dod-evidence/)
+
+用于根据明确验收项建立版本证据矩阵，区分测试、eval、真实执行、CI 和发布状态，避免将局部验证误报为完成。
+
+完整流程请参阅 [Skill 使用说明](version-dod-evidence/SKILL.md)。
+
+### Codex Thread Title Normalizer
+
+[`codex-thread-title-normalizer/`](codex-thread-title-normalizer/)
+
+用于批量规范 Codex 对话标题；以 `createdAt` 的 Asia/Shanghai 日期生成标题，并在任何改名之前展示确认表，不会修改项目或对话内容。
+
+完整流程请参阅 [Skill 使用说明](codex-thread-title-normalizer/SKILL.md)。
+
 ## 仓库结构
 
 每个 Skill 都位于独立目录中，目录内可以包含主说明文件 `SKILL.md`、Agent 元数据、参考资料、示例或其他配套资源。

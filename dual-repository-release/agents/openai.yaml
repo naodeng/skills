@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dual Repository Release"
+  short_description: "Verify releases across fork and upstream"
+  default_prompt: "Verify readiness for a coordinated fork and upstream release."
