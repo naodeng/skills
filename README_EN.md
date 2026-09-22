@@ -51,6 +51,18 @@ changes projects or conversation content.
 Read the [Skill instructions](codex-thread-title-normalizer/SKILL.md) for the
 complete workflow and verification requirements.
 
+### AI QA Weekly
+
+[`ai-qa-weekly/`](ai-qa-weekly/)
+
+Discover, verify, filter, and summarize meaningful developments at the
+intersection of AI and software testing or quality engineering as a bilingual
+weekly digest. The package includes a topic taxonomy, source and search
+strategy, output template, and manual relevance cases.
+
+Read the [Skill instructions](ai-qa-weekly/SKILL.md) for the complete workflow
+and evidence rules.
+
 ## Repository layout
 
 Each Skill lives in its own directory and may include its main `SKILL.md`,

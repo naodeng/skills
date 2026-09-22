@@ -44,6 +44,16 @@
 
 完整流程请参阅 [Skill 使用说明](codex-thread-title-normalizer/SKILL.md)。
 
+### AI QA Weekly
+
+[`ai-qa-weekly/`](ai-qa-weekly/)
+
+用于从当前官方、GitHub、研究和工程来源中发现、核验、筛选并整理 AI ×
+软件测试与质量工程动态，生成中英文双语周报；包含主题分类、来源策略、
+搜索策略、输出模板和人工相关性评测案例。
+
+完整流程请参阅 [Skill 使用说明](ai-qa-weekly/SKILL.md)。
+
 ## 仓库结构
 
 每个 Skill 都位于独立目录中，目录内可以包含主说明文件 `SKILL.md`、Agent 元数据、参考资料、示例或其他配套资源。
