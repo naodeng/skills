@@ -55,12 +55,30 @@ adoption signals, and technical disagreements. Community popularity alone is
 not evidence of eligibility. Find and verify the original source before
 including a candidate.
 
+## Live source verification
+
+Before an item enters the final digest, open its direct source URL during the
+current run and confirm:
+
+1. the final page is the claimed publisher or original project;
+2. the page title and content support the claimed development; and
+3. the publication, release, or meaningful update date/version is inside the
+   coverage window.
+
+Follow redirects only when the final page is still the original authoritative
+source. A 404, inaccessible page, login wall, search-results page, unrelated
+redirect, missing date, or conflicting date is not publishable evidence.
+Exclude the candidate or report `INSUFFICIENT_EVIDENCE`; do not leave it in the
+digest with a future verification note.
+
 ## Evidence rules
 
 - Each included item needs at least one reliable, direct, authoritative source.
 - Link to the original content, not a search-results page, scraped repost, SEO
   aggregation page, or social summary.
 - Verify the meaningful publication, release, announcement, or update date.
+- Current weekly claims must come from this run's external retrieval; model
+  memory, prior issues, prompt assertions, and search snippets are not evidence.
 - Exclude rumors, anonymous claims, unverified reposts, AI-generated content
   farms, and claims whose original source cannot be found.
 - Do not force equal representation across source types or organizations, but

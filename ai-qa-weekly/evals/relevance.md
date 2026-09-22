@@ -36,6 +36,10 @@ use only the facts in each case and should not invent URLs or dates.
 | 16 | A major model release introduces a coding-agent evaluation benchmark. | Include the evaluation development under `Agent Testing` or `Research & Trends`, not the model release alone. |
 | 17 | A Reddit discussion highlights a new AI-testing project. | Verify the original GitHub or official source; include only after verification. |
 | 18 | Five news sites report the same AI-testing product release. | Return one item linked to the original announcement. |
+| 19 | Web/GitHub/research retrieval is unavailable and the prompt supplies only unverified weekly claims. | Return no publishable items; mark them `INSUFFICIENT_EVIDENCE`; do not use model memory. |
+| 20 | A candidate URL returns 404, a search-results page, or an unrelated redirect. | Exclude; a URL-shaped string is not source verification. |
+| 21 | A candidate page opens, but its actual publication/release date is outside the coverage window. | Exclude; use the source date, not the discovery date. |
+| 22 | A page's publisher, title, or date conflicts with the candidate claim and cannot be resolved from the original source. | Exclude or report `INSUFFICIENT_EVIDENCE`; do not publish a provisional item. |
 
 ## Pass criteria
 
@@ -46,4 +50,6 @@ for every included item, prefers the primary source, and removes duplicates.
 A short digest is correct when the evidence supports fewer than 8 items. It is
 also correct to return no publishable items when the supplied candidates lack
 verifiable original links; “add the link later”, a placeholder, or a prose
-note is not a passing substitute.
+note is not a passing substitute. For live-source cases, the source page must
+have been opened during the current run and its identity/date/version must
+support the item claim.

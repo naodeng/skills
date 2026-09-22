@@ -17,6 +17,23 @@ This Skill uses the agent's current web, GitHub, and research discovery
 capabilities. It does not create a crawler, database, backend, RSS collector,
 ranking service, or scheduled job.
 
+## Current-source gate
+
+Weekly claims MUST be supported by current external retrieval during this run.
+Do not use model memory, a prior issue, a prompt-supplied claim, or a search
+snippet as evidence for a weekly item.
+
+If current Web, GitHub, or research retrieval is unavailable, return no
+publishable items (or only items whose pages were independently opened and
+verified) and label the unsupported candidates `INSUFFICIENT_EVIDENCE`. Do not
+publish a draft item with “verify later”, a missing URL, or an unconfirmed
+date.
+
+When this package is used from the source repository, install it in a
+supported Codex Skill location before testing implicit discovery. The package
+being present as a top-level repository directory is not runtime discovery
+evidence; see the installation note in [README.md](README.md).
+
 ## Required workflow
 
 1. Define and state the coverage window before searching.
@@ -31,6 +48,8 @@ ranking service, or scheduled job.
 4. Verify each candidate against the original publication, release,
    announcement, paper, or meaningful update. Search/index dates, crawl dates,
    footer dates, and a repository's incidental commit date are not sufficient.
+   Open the candidate's direct source page and record the page identity and
+   date/version evidence before including it.
 5. Apply every relevance gate below, deduplicate underlying developments, and
    select only the candidates that remain.
 6. Read [output-template.md](references/output-template.md), then produce the
@@ -110,7 +129,8 @@ Before returning the digest, confirm:
 - the coverage boundaries and timezone are stated and correct;
 - every meaningful event is inside the coverage window;
 - every item passes AI relevance, QA relevance, and reporting value;
-- every item has a verifiable direct source link and accurate source date;
+- every item has a verifiable direct source link whose page was opened during
+  this run, and the page identity and source date/version match the claim;
 - duplicates are collapsed;
 - every category is from the canonical taxonomy;
 - Chinese and English description limits are met; and

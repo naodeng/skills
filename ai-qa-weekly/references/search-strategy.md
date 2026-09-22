@@ -63,7 +63,8 @@ For each candidate, record:
 
 ```text
 event | primary URL | source | meaningful event date | AI evidence |
-QA evidence | category | duplicate group | include/exclude reason
+QA evidence | page identity/date evidence | URL status | category |
+duplicate group | include/exclude reason
 ```
 
 Then ask, in order:
@@ -78,6 +79,11 @@ Then ask, in order:
 If any answer is no, reject the candidate. If an announcement was discovered
 through media or community, locate and verify the official source before
 including it. If verification fails, exclude it.
+
+Do not treat a URL's presence, a search snippet, or a successful-looking
+redirect as verification. Open the final page, match its identity and
+publication/release date to the candidate record, and mark unresolved items
+`INSUFFICIENT_EVIDENCE` rather than carrying them into the digest.
 
 ## 6. Deduplicate and select
 

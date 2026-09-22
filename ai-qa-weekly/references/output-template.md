@@ -62,8 +62,30 @@ displaying every item as simply `GitHub`.
 - [ ] publication date, coverage dates, and timezone are stated;
 - [ ] each item has one canonical category;
 - [ ] each meaningful event is inside the coverage window;
-- [ ] the original link is direct, real, and verified;
+- [ ] the original link is direct, real, opened during this run, and verified;
+- [ ] the page identity and publication/release date or version support the
+      item claim;
 - [ ] duplicates are collapsed;
 - [ ] Chinese summaries are at most 100 Chinese characters;
 - [ ] English summaries are at most 100 words; and
 - [ ] no placeholder, marketing-only, or unsupported claim remains.
+
+## When no item is publishable
+
+If no candidate has a verified direct source or no candidate passes the
+AI × QA gates, publish a short bilingual no-results issue instead of filling
+the target count:
+
+```markdown
+# AI QA Weekly
+
+**资讯周期 / Coverage:** {{coverage_start}} — {{coverage_end}}
+
+本期没有通过发布验证的条目。
+
+No items passed publication validation for this issue.
+
+**原因 / Reason:** {{State the failed evidence or relevance gate.}}
+
+Unsupported candidates: `INSUFFICIENT_EVIDENCE`.
+```

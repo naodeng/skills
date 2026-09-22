@@ -35,6 +35,26 @@ when running it:
 - [output-template.md](references/output-template.md) — issue format; and
 - [relevance.md](evals/relevance.md) — manual relevance cases.
 
+## Current-source and discovery boundaries
+
+Weekly claims must be supported by pages opened and verified during the current
+run. Model memory, prior issues, prompt-supplied claims, and search snippets
+are not evidence. If current external retrieval is unavailable, return no
+publishable items and mark unsupported candidates `INSUFFICIENT_EVIDENCE`.
+
+This repository is a source catalog, not itself a Codex runtime discovery
+root. For local Codex use, install or link the Skill into a supported user
+Skill directory, then restart Codex if needed:
+
+```bash
+mkdir -p ~/.agents/skills
+ln -sfn /absolute/path/to/skills/ai-qa-weekly ~/.agents/skills/ai-qa-weekly
+```
+
+Verify discovery with an explicit `$ai-qa-weekly` invocation or the runtime's
+Skill list. A GitHub push of this source directory does not by itself prove
+runtime discovery.
+
 ## Schedule and boundaries
 
 For a Monday report, the default coverage is the previous Monday through
@@ -53,4 +73,6 @@ Generate the AI QA Weekly for 2026-09-21 through 2026-09-27.
 Generate a bilingual weekly AI QA digest with verified original sources.
 ```
 
-Version: 1.0
+Version: 1.0.1
+
+Last Verified: 2026-09-22
