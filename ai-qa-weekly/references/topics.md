@@ -3,6 +3,18 @@
 Use this taxonomy for discovery, relevance decisions, and classification. It
 defines scope; it is not a quota and every issue does not need every category.
 
+## Chinese-language discovery vocabulary
+
+Use Chinese terms in a separate discovery pass and combine them with product,
+vendor, release, benchmark, repository, and date terms. Useful terms include
+`大模型评测`, `智能体评测`, `Agent 测试`, `AI 测试`, `AI 软件测试`,
+`大模型测试`, `LLM 评测`, `提示词回归`, `工具调用测试`, `MCP 测试`,
+`AI 生成测试`, `AI 质量工程`, `智能体可靠性`, `大模型安全评测`, and
+`AI 测试自动化`.
+
+Chinese terms broaden discovery only. Apply the same AI × QA gates, direct-page
+verification, deduplication, and unified top-10 ranking as for English sources.
+
 ## 1. AI Testing
 
 AI applied directly to software-testing work:

@@ -26,7 +26,26 @@ Search several broad terms, with date filters where the source supports them:
 - `LLM evaluation`
 - `AI software quality`
 
-These are entry points, not sufficient coverage.
+Also run a Chinese-language pass using terms such as:
+
+- `AI 测试`
+- `AI 软件测试`
+- `大模型评测`
+- `智能体评测`
+- `Agent 测试`
+- `大模型测试`
+- `LLM 评测`
+- `提示词回归`
+- `工具调用测试`
+- `MCP 测试`
+- `AI 生成测试`
+- `AI 质量工程`
+- `智能体可靠性`
+- `大模型安全评测`
+
+Use Chinese and English synonyms together when a project, product, or paper is
+likely to publish in both languages. These queries are entry points, not
+sufficient coverage.
 
 ## 3. Expand by taxonomy
 
@@ -49,8 +68,12 @@ whole category.
 Run independent discovery passes for:
 
 - official announcements, documentation, and changelogs;
+- Chinese-language official announcements, documentation, and changelogs;
 - GitHub repositories and releases;
+- Chinese-maintainer repositories and releases on GitHub, ModelScope, or Gitee;
 - research papers, datasets, and benchmarks;
+- Chinese university/lab research pages and original Chinese datasets or
+  benchmarks;
 - engineering blogs;
 - credible technical media; and
 - community discussions as discovery signals.
@@ -64,7 +87,8 @@ For each candidate, record:
 ```text
 event | primary URL | source | meaningful event date | AI evidence |
 QA evidence | page identity/date evidence | URL status | category |
-duplicate group | include/exclude reason
+language/region | unified score | unified rank | duplicate group |
+include/exclude reason
 ```
 
 Then ask, in order:
@@ -89,16 +113,46 @@ publication/release date to the candidate record, and mark unresolved items
 
 Cluster reports about the same release, feature, project, paper, benchmark,
 or announcement. Keep one item and link to the most authoritative source.
-Select 8–12 strong items when available; fewer is correct when the evidence
-does not support more. Sort by expected value to QA readers, not by search
-result position or star count.
+After deduplication, score every candidate that passed the five checks in one
+pool. Use the following 100-point rubric:
+
+| Dimension | Points | Question |
+| --- | ---: | --- |
+| AI-Native QA relevance | 0–40 | Does it directly change agent/LLM testing, evaluation, regression, or AI-assisted quality work? |
+| QA actionability | 0–25 | Can a QA/QE/SDET use the development in a test, gate, workflow, or diagnosis? |
+| Substantive change | 0–15 | Is there a meaningful release, finding, benchmark, or practice rather than promotion or a minor fix? |
+| Evidence/source quality | 0–15 | Is the direct source authoritative, specific, and independently verifiable? |
+| Coverage value | 0–5 | Does it add useful signal after duplicates and closely related items are collapsed? |
+
+Freshness is a binary gate before scoring. Sort Chinese/Chinese-language and
+international candidates by the same score, use primary-source quality and
+then QA actionability as tie-breakers, and select exactly the top 10. A
+Chinese item ranked 11 or lower is excluded; do not create a geographic quota
+or use a low-scoring Chinese item to fill the list. Continue discovery when
+the first pass has fewer than 10 candidates. If exhaustive verified discovery
+still produces fewer than 10, do not publish a shortened normal issue; return
+an explicit `INSUFFICIENT_EVIDENCE` or blocked-status note.
+
+## 7. Produce two equivalent editions
+
+After selection, write the complete Chinese edition first and the complete
+English edition second. Use the same 10-item IDs and order in both editions.
+Each corresponding item must preserve the same event, QA implication, source,
+date, category, metric, qualification, and direct link. Translate names and
+prose naturally, but do not add an English-only claim or omit a Chinese claim.
+Count the Chinese description in Chinese characters and the English
+description in Unicode characters; both must be longer than 200 characters.
+
+Do not interleave languages item by item, and do not write a short bilingual
+summary followed by a longer version in only one language.
 
 ## Noise filters
 
 Explicitly filter jobs, hiring, interview questions, courses, bootcamps,
 certifications, sponsored content, SEO listicles, generic tutorials, generic
 AI or QA news, old articles resurfacing in search, product-comparison spam,
-duplicate reports, and marketing-only announcements.
+duplicate reports, marketing-only announcements, translated copies without
+new evidence, and Chinese media reposts when the original source is missing.
 
 The decision question is: “What changed in this coverage period that a QA
 professional working with AI should actually know?”

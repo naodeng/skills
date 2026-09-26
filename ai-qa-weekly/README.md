@@ -17,22 +17,26 @@ software testing and quality engineering.
 
 ## What it produces
 
-Each issue targets 8–12 curated items, but quality takes priority over the
-count. Every item has a Chinese and English title, one canonical category,
-source, meaningful update date, concise Chinese and English summaries, and a
-direct original-source link.
+Each normal issue contains exactly 10 candidates selected from one unified
+pool of Chinese/Chinese-language and international developments. The output
+has a complete Chinese edition followed by a complete English edition. Both
+editions contain the same 10 items in the same order, with descriptions longer
+than 200 characters and matching facts, categories, dates, sources, and links.
 
 ## How it works
 
-The Skill searches current official, GitHub, research, engineering, media, and
-community sources; verifies freshness and the AI × QA intersection; removes
-duplicates; and formats the result as Markdown. Read the focused references
-when running it:
+The Skill searches current Chinese/Chinese-language and international official,
+GitHub, research, engineering, media, and community sources; verifies
+freshness and the AI × QA intersection; scores all passing candidates
+together; removes duplicates; and formats two equivalent Markdown editions.
+Read the focused references when running it:
 
 - [topics.md](references/topics.md) — taxonomy and query vocabulary;
 - [sources.md](references/sources.md) — source hierarchy and evidence rules;
-- [search-strategy.md](references/search-strategy.md) — discovery and filtering;
-- [output-template.md](references/output-template.md) — issue format; and
+- [search-strategy.md](references/search-strategy.md) — bilingual discovery,
+  unified scoring, and filtering;
+- [output-template.md](references/output-template.md) — two-edition issue
+  format; and
 - [relevance.md](evals/relevance.md) — manual relevance cases.
 
 ## Current-source and discovery boundaries
@@ -70,9 +74,11 @@ weekly run; the Skill remains responsible for discovery and content quality.
 ```text
 Generate this week's AI QA Weekly.
 Generate the AI QA Weekly for 2026-09-21 through 2026-09-27.
-Generate a bilingual weekly AI QA digest with verified original sources.
+Generate a 10-item AI QA digest with separate Chinese and English editions,
+each with verified original sources and descriptions longer than 200
+characters.
 ```
 
-Version: 1.0.1
+Version: 1.0.2
 
-Last Verified: 2026-09-22
+Last Verified: 2026-09-26

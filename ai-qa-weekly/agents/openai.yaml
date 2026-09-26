@@ -1,4 +1,4 @@
 interface:
   display_name: "AI QA Weekly"
   short_description: "Generate evidence-based bilingual AI QA digests"
-  default_prompt: "Use $ai-qa-weekly to generate a bilingual weekly digest of verified AI and software-quality developments."
+  default_prompt: "Use $ai-qa-weekly to generate exactly 10 verified AI-Native QA developments, first as a Chinese edition and then as a matching English edition, with each description longer than 200 characters."
