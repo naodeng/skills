@@ -5,6 +5,28 @@ repeatable workflows.
 
 [中文](README.md) | [English](README_EN.md)
 
+## Installation
+
+Use the Skills CLI to install a specific Skill globally:
+
+```bash
+npx skills add naodeng/skills --skill <skill-name> -g
+```
+
+Commands for the Skills in this repository:
+
+```bash
+npx skills add naodeng/skills --skill 30-days-learning-plan-project-creator -g
+npx skills add naodeng/skills --skill dual-repository-release -g
+npx skills add naodeng/skills --skill version-dod-evidence -g
+npx skills add naodeng/skills --skill codex-thread-title-normalizer -g
+npx skills add naodeng/skills --skill ai-qa-weekly -g
+```
+
+For project-local installation, omit the trailing `-g`. Restart Codex after
+installation, or explicitly invoke the corresponding `$skill-name` to verify
+that the Skill is available.
+
 ## Available Skills
 
 ### 30 Days Learning Plan Project Creator

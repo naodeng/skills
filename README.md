@@ -4,6 +4,26 @@
 
 本仓库用于存放可复用的 Codex Skills，帮助建立结构化、可重复执行的工作流程。
 
+## 安装
+
+使用 Skills CLI 全局安装指定 Skill：
+
+```bash
+npx skills add naodeng/skills --skill <skill-name> -g
+```
+
+各 Skill 的安装命令如下：
+
+```bash
+npx skills add naodeng/skills --skill 30-days-learning-plan-project-creator -g
+npx skills add naodeng/skills --skill dual-repository-release -g
+npx skills add naodeng/skills --skill version-dod-evidence -g
+npx skills add naodeng/skills --skill codex-thread-title-normalizer -g
+npx skills add naodeng/skills --skill ai-qa-weekly -g
+```
+
+仅安装到当前项目时，去掉命令末尾的 `-g`。安装后重启 Codex，或使用对应的 `$skill-name` 显式验证 Skill 是否可用。
+
 ## 可用 Skills
 
 ### 30 Days Learning Plan Project Creator
