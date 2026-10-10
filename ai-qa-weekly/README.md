@@ -39,6 +39,21 @@ Read the focused references when running it:
   format; and
 - [relevance.md](evals/relevance.md) — manual relevance cases.
 
+### Domestic testing-community coverage
+
+Every normal run includes an independent domestic testing-community pass,
+attempting TesterHome / 测试之家 and 测试人社区 before final selection.
+测试窝 is supplementary; 51Testing is conditional on current page access.
+Keep working records of site queries, access outcomes, supplementary sources
+used or skipped, and candidate decisions. These records explain coverage
+limits or why no domestic item was selected; they are not extra weekly items.
+
+An author's or team's first-hand forum report can be a primary source when
+authorship, meaningful date, methods, and evidence are verified. Reposts and
+translations must be traced to the original source; a translation, reply, or
+bump date does not make an old event new. Domestic and international items
+still compete in the same top-10 ranking, with no regional bonus or quota.
+
 ## Current-source and discovery boundaries
 
 Weekly claims must be supported by pages opened and verified during the current

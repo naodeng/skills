@@ -75,20 +75,65 @@ Run independent discovery passes for:
 - Chinese university/lab research pages and original Chinese datasets or
   benchmarks;
 - engineering blogs;
-- credible technical media; and
-- community discussions as discovery signals.
+- credible technical media;
+- international community discovery; and
+- domestic testing-community discovery, independently of Chinese official
+  sources and general Chinese-language queries.
 
 Use the source hierarchy in [sources.md](sources.md) during verification.
+
+### Domestic testing-community pass
+
+Attempt TesterHome and 测试人社区 on every normal run. Also consider 测试窝
+and, when accessible, 51Testing as supplementary sources. Record a reason for
+skipping a supplementary source. Use both community entry pages and focused
+site searches where available; one generic Chinese query does not complete
+this pass. Example queries, combined with the coverage window:
+
+- `site:testerhome.com AI 测试 回归`
+- `site:testerhome.com 智能体 评测`
+- `site:testerhome.com AI 自动化 CI`
+- `site:ceshiren.com Agent 测试 评测`
+- `site:ceshiren.com AI Playwright 审阅 修复`
+- `site:testwo.com LLM 评估`
+- `site:51testing.com AI 测试 质量`
+
+Expand toward test generation, assertions, prompt/tool-call regression,
+evaluation datasets, quality gates, reliability, failure analysis, and
+engineering-team practice. Look beyond a site's AI section: testing tools,
+automation, and team channels may contain stronger QA evidence. Search-date
+filters and forum listing activity are discovery aids, not event-date proof.
+
+Keep a working coverage record for each listed community and other sources
+actually attempted:
+
+```text
+site/channel | query or entry URL attempted | access/search outcome |
+candidate IDs reviewed | exclusion/access limitation or skip reason
+```
+
+Distinguish pages opened, search-only discovery, access failure, and skipped
+supplementary sources. Record only actions actually performed; a search
+snippet is not a verified original page. Link each reviewed candidate to the
+decision record below. If no domestic item reaches the final top 10, use the
+records to distinguish no eligible candidate found within the searched scope,
+failed verification, ranking below 10, and incomplete coverage due to access
+limits. Do not claim that no domestic developments exist or that an
+inaccessible site has no matching content. These are working evidence records,
+not extra news items or mandatory sections inside the two published editions;
+provide them when an audit or explanation is requested.
 
 ## 5. Build and verify candidates
 
 For each candidate, record:
 
 ```text
-event | primary URL | source | meaningful event date | AI evidence |
-QA evidence | page identity/date evidence | URL status | category |
-language/region | unified score | unified rank | duplicate group |
-include/exclude reason
+candidate ID | event | discovery URL | primary URL | source |
+source kind (first-hand original / secondary / unresolved) |
+meaningful event date | AI evidence | QA evidence |
+page identity/authorship/date evidence | URL status | category |
+language/region | unified score and rank (only after eligibility) |
+duplicate group | include/exclude reason
 ```
 
 Then ask, in order:
@@ -100,9 +145,17 @@ Then ask, in order:
 4. Is there substantive new information rather than a minor fix or promotion?
 5. Would a QA/QE/SDET reader benefit?
 
-If any answer is no, reject the candidate. If an announcement was discovered
-through media or community, locate and verify the official source before
-including it. If verification fails, exclude it.
+If any answer is no, reject the candidate. For a secondary media or community
+report, locate and verify the original source before including it. A
+maintainer's or team's first-hand forum report can itself be that source when
+it meets [sources.md](sources.md); do not demand an unrelated corporate
+announcement. If verification fails, exclude it. An unresolved candidate does
+not receive an invented score or rank.
+
+For forums, verify the original post date or an evidenced substantive update,
+not the last reply, bump, or listing activity. For translations/reposts, use
+the underlying event's date; only a substantive new experiment or finding
+with its own evidence may be assessed as a new event.
 
 Do not treat a URL's presence, a search snippet, or a successful-looking
 redirect as verification. Open the final page, match its identity and
@@ -110,6 +163,10 @@ publication/release date to the candidate record, and mark unresolved items
 `INSUFFICIENT_EVIDENCE` rather than carrying them into the digest.
 
 ## 6. Deduplicate and select
+
+Complete the required language and source-class passes, including attempted
+core domestic communities, before selecting the final 10. Finding 10 items
+early does not remove the coverage requirement.
 
 Cluster reports about the same release, feature, project, paper, benchmark,
 or announcement. Keep one item and link to the most authoritative source.

@@ -51,13 +51,18 @@ evidence; see the installation note in [README.md](README.md).
    and [search-strategy.md](references/search-strategy.md) before discovery.
 3. Search across the topic taxonomy and multiple source types. Run both an
    international/English discovery pass and a Chinese-language discovery pass
-   when current sources are available. Do not rely on one generic `AI QA`
-   query.
+   when current sources are available. Also run an independent domestic
+   testing-community pass: attempt TesterHome and 测试人社区, and consider the
+   supplementary sources in [sources.md](references/sources.md). Record
+   site/query coverage, access failures, and candidate decisions as specified
+   in [search-strategy.md](references/search-strategy.md). Do not stop these
+   passes merely because 10 international candidates are already available.
 4. Verify each candidate against the original publication, release,
    announcement, paper, or meaningful update. Search/index dates, crawl dates,
-   footer dates, and a repository's incidental commit date are not sufficient.
-   Open the candidate's direct source page and record the page identity and
-   date/version evidence before including it.
+   footer dates, forum last-reply/bump dates, translation dates, and a
+   repository's incidental commit date are not sufficient. Open the
+   candidate's direct source page and record the page identity and date/version
+   evidence before including it.
 5. Apply every relevance gate below, deduplicate underlying developments, and
    rank the remaining Chinese and non-Chinese candidates in one pool. Select
    exactly the top 10; a Chinese-source item is publishable only when its
@@ -83,10 +88,10 @@ target count.
 
 ## Evidence and selection rules
 
-- A normal issue contains exactly 10 items. Continue discovery across all
-  configured source classes and languages until 10 candidates pass the gates
-  and can be verified. Never fill the list with low-relevance or weakly
-  sourced items.
+- A normal issue contains exactly 10 items. Complete the required discovery
+  passes before final selection; continue across source classes and languages
+  when fewer than 10 candidates pass the gates and can be verified. Never fill
+  the list with low-relevance or weakly sourced items.
 - If external retrieval is unavailable or exhaustive discovery still produces
   fewer than 10 publishable candidates, do not publish a shortened normal
   issue. Return an explicit `INSUFFICIENT_EVIDENCE` or blocked-status note
@@ -104,9 +109,13 @@ target count.
   from the issue even when its source is authoritative; a Chinese item ranked
   within the top 10 is included on the same terms as every other item.
 - Prefer a direct primary source in the final link: official announcement or
-  changelog, GitHub release/repository, original paper, or engineering blog.
-  Community posts and technical media are discovery or corroboration signals;
-  they do not replace an available primary source.
+  changelog, GitHub release/repository, original paper, or first-hand
+  engineering report. A maintainer's or team's original forum report can be
+  primary evidence when its authorship, date, methods, and supporting evidence
+  are verified; a corporate announcement is not required. Reposts, translated
+  news, and third-party discussions remain secondary discovery signals. Judge
+  originality and evidence, not the hosting platform; see
+  [sources.md](references/sources.md).
 - Never invent a URL, date, metric, ranking, or claim. If the original source
   cannot be located and verified, exclude the candidate. Do not retain a
   provisional item with “add the link later”, a placeholder URL, a search
@@ -164,6 +173,10 @@ Before returning the digest, confirm:
 - the coverage boundaries and timezone are stated and correct;
 - every meaningful event is inside the coverage window;
 - every item passes AI relevance, QA relevance, and reporting value;
+- the required discovery passes are complete, including attempted core
+  domestic testing communities, with coverage and access failures recorded;
+- first-hand community reports are distinguished from secondary reports, and
+  no translation, reply, or bump date is used to refresh an old event;
 - Chinese/Chinese-language and international candidates were scored in one
   pool, and exactly 10 items were selected from the unified top 10;
 - every item has a verifiable direct source link whose page was opened during

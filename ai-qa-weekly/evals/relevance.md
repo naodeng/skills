@@ -1,8 +1,10 @@
 # AI QA Weekly Relevance Evaluation
 
 These manual cases test the intersection rule, freshness handling, canonical
-classification, source verification, and deduplication. The evaluator should
-use only the facts in each case and should not invent URLs or dates.
+classification, source verification, deduplication, and domestic-community
+coverage. They are offline decision fixtures, not verified weekly news. The
+evaluator should use only the facts in each case and should not invent URLs,
+dates, retrieval results, or publishable items.
 
 ## Should include
 
@@ -47,6 +49,26 @@ use only the facts in each case and should not invent URLs or dates.
 | 27 | A candidate page opens, but its actual publication/release date is outside the coverage window. | Exclude; use the source date, not the discovery date. |
 | 28 | A page's publisher, title, or date conflicts with the candidate claim and cannot be resolved from the original source. | Exclude or report `INSUFFICIENT_EVIDENCE`; do not publish a provisional item. |
 
+## Domestic testing-community cases
+
+| Case | Input | Expected |
+| --- | --- | --- |
+| 29 | Ten international candidates are verified, but only domestic vendor sites have been searched. | Complete the independent domestic testing-community pass, attempting TesterHome and 测试人社区, before final selection. Record queries, access outcomes, and reviewed candidates; no regional quota applies. |
+| 30 | A maintainer publishes this week's original Agent regression report on a testing forum, identifying their role and providing methods, environment, samples, assertions, failure cases, limitations, and supporting implementation/run records. | Treat the post as a potential first-hand primary source, not a repost merely because it is on a forum. Verify the direct post, authorship, meaningful date, and supporting evidence during the current run; then apply the same gates and unified ranking. Do not require a separate corporate announcement or claim independently reproduced results. |
+| 31 | A domestic forum translates an overseas release this week; the original release predates the window, with no new experiment or finding. | Treat it as secondary discovery, follow the original source, and exclude this event for freshness. The translation date does not reset the event date. |
+| 32 | An old AI-testing forum post receives a new reply or is bumped this week, without a substantive update. | Exclude the old event for freshness. The last-reply, bump, and listing dates are not meaningful update dates. |
+| 33 | This week's post in a forum's AI-testing section reports only model funding, recruitment, or a training promotion. | Exclude; the section label does not satisfy the AI × QA and reporting-value gates. |
+| 34 | A testing site is inaccessible this run, while a search snippet suggests a relevant post. | Log the attempted site/query and access failure. Seek another direct primary source; otherwise mark the candidate `INSUFFICIENT_EVIDENCE`. Do not claim verification, no matching content, or permanent site unavailability. Other verified sources may still support a normal issue. |
+| 35 | A fully verified domestic forum original ranks 11 in the unified pool, leaving no domestic item in the top 10. | Exclude it without a regional bonus. Retain its rank/exclusion reason and the community coverage record; explain the absence as a result within the searched scope, not as proof that no domestic developments exist. |
+| 36 | Eight items remain after the required passes and exhaustive verification, and the editor wants to fill the last two slots with forum reposts or weakly supported claims. | Continue useful discovery or return the explicit evidence/blocker note. Do not publish eight normal items, relax the gates, or manufacture two items. |
+
+For a retrieval-planning regression, give a fresh evaluator the package but
+withhold this expected-results table. Ask it to plan domestic discovery and
+classify an original report, an old translated release, a reply-bumped post,
+an off-topic AI-section post, and an inaccessible candidate. Check both
+decisions and coverage records. This offline exercise does not prove live
+retrieval, implicit Skill discovery, or a complete weekly publishing run.
+
 ## Pass criteria
 
 An output passes when it states the coverage period, includes exactly 10
@@ -62,3 +84,10 @@ evidence/blocker note rather than a shortened normal issue. “Add the link
 later”, a placeholder, or a prose note is not a passing substitute. For
 live-source cases, the source page must have been opened during the current run
 and its identity/date/version must support the item claim.
+
+Normal-scope retrieval must also complete the international, Chinese-language,
+and independent domestic testing-community passes. Record attempted core
+communities, supplementary sources used or skipped, access outcomes, and
+candidate decisions. Distinguish first-hand originals from secondary reports;
+do not infer missing domestic developments from an access failure or a top-10
+selection with no domestic items.
